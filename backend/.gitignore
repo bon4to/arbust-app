@@ -1,0 +1,10 @@
+# Go
+bin/
+vendor/
+*.exe
+
+# Logs
+*.log
+
+# Environment files
+.env
