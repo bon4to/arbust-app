@@ -13,6 +13,8 @@ Fullstack application to review songs, built with:
 - `/frontend` - React SPA
 - `/db` - Database-related files (e.g., migrations)
 
-## How to Run
+## Setup
 
-TBD - Docker Compose setup coming soon.
+1. Copy `.env.example` to `.env`.
+2. Fill up with desired credentials.
+3. Run `docker compose up -d`.

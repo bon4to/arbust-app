@@ -3,3 +3,6 @@
 
 # IDE history
 .history/
+
+# Enviroment files
+.env
