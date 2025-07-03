@@ -1,7 +1,8 @@
 # macOS
 .DS_Store
 
-# IDE history
+# IDE
+.idea/
 .history/
 
 # Enviroment files
