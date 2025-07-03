@@ -7,3 +7,6 @@
 
 # Enviroment files
 .env
+
+# Safe off-repo directory
+/off-repo
