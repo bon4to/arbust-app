@@ -1,7 +1,7 @@
 # **arbust.**
 ![arbust-banner](https://github.com/user-attachments/assets/f2944195-9e30-42b5-8b4d-c924c43704f1)
 
-> your app to review songs! 🌳⭐
+> **your place** to review songs! 🌳⭐
 
 ---
 
