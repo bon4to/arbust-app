@@ -1,0 +1,8 @@
+// This file is used to configure Prettier, a code formatter.
+// The settings defined here will apply to all files in the project.
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100
+}
