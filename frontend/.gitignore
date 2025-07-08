@@ -1,6 +1,33 @@
-# Node.js
-node_modules/
-dist/
+# dependencies
+/node_modules
 
-# Environment files
+# production
+/dist
+/build
+
+# Vite
+.vite
+
+# dotenv
 .env
+.env.*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store
+
+# editor folders
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# lint cache
+.eslintcache
+
+# tailwind
+.tailwindcache
