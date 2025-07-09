@@ -1,5 +1,5 @@
 import React from 'react';
-import arbustLogoUrl from '../assets/arbust+typo-hollow.svg';
+import arbustLogoUrl from '../assets/arbust-typo-hollow.svg';
 
 interface BaseLayoutProps {
   children: React.ReactNode;
