@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* dark theme (default) */
+:root {
+  --color-background: #1F1F1F;
+  --color-surface: #323232;
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #A3A3A3;
+  --color-border: #4B4B4B;
+}
+
+/* light theme */
+.light {
+  --color-background: #F5F5F5;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #4B4B4B;
+  --color-text-secondary: #A3A3A3;
+  --color-border: #E0E0E0;
+}
+
+@layer components {
+  /* centered container with a max-width and responsive padding. */
+  .container-readable {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
