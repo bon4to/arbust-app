@@ -5,15 +5,16 @@ import arbustBackground from '../../assets/top-view-green-fresh-leaves.jpg';
 const HeroSection: React.FC = () => {
   return (
     <section 
-      className="relative w-full h-[60vh] md:h-[70vh] bg-cover bg-center flex items-center justify-center text-white"
+      className="relative w-full h-[60vh] md:h-[70vh] bg-cover bg-center flex items-center justify-center text-white -mt-20"
       style={{ backgroundImage: `url(${arbustBackground})` }}
       aria-label="A background of fresh green leaves"
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-primary-dark opacity-40"></div>
       
-      <div className="relative z-10 text-center p-4">
-        <h1 className="text-4xl md:text-6xl font-serif italic mb-4">
+      <div className="container-readable relative z-10 text-center p-4">
+        <h1 className="mt-20 text-4xl md:text-6xl font-serif italic mb-4">
           “Music is like a dream. One that I cannot hear.”
         </h1>
         <p className="text-neutral-300 mb-8">Ludwig van Beethoven</p>
