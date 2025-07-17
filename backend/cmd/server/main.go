@@ -23,7 +23,7 @@ func main() {
 
 	// AutoMigrate automatically creates or updates the table based on the provided model definition.
 	// NOTE: In production, consider using versioned migrations instead.
-	if err := database.AutoMigrate(&models.User{}, &models.Review{}); err != nil {
+	if err := database.AutoMigrate(&models.User{}, &models.Item{}, &models.Review{}); err != nil {
 		log.Fatalf("AutoMigrate failed: %v", err)
 	}
 
