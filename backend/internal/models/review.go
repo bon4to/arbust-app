@@ -11,12 +11,11 @@ import (
 type Review struct {
 	gorm.Model
 
-	UserID   uint    `gorm:"not null"` // UserID is the foreign key linking the review to its author.
-	ItemID   uint    `gorm:"not null"` // ItemID is the foreign key to the reviewed item (track or album).
-	ItemType string  `gorm:"not null"` // ItemType indicates the type of the reviewed item ("track" or "album").
-	Liked    bool    `gorm:"not null"` // Liked indicates if the review has been liked by the user.
-	Content  string  `gorm:"not null"` // Content contains the full text of the review.
-	Rating   float32 `gorm:"not null"` // Rating is a numeric score from 0.0 to 5.0 in 0.5 increments.
+	UserID  uint    `gorm:"not null"` // UserID is the foreign key linking the review to its author.
+	ItemID  uint    `gorm:"not null"` // ItemID is the foreign key to the reviewed item (track or album).
+	Liked   bool    `gorm:"not null"` // Liked indicates if the review has been liked by the user.
+	Content string  `gorm:"not null"` // Content contains the full text of the review.
+	Rating  float32 `gorm:"not null"` // Rating is a numeric score from 0.0 to 5.0 in 0.5 increments.
 }
 
 // BeforeSave ensures that the rating is between 0.0 and 5.0 and is in 0.5 increments.
