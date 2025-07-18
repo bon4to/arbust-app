@@ -19,3 +19,10 @@ func New(db *gorm.DB) *Handler {
 	return &Handler{DB: db}
 }
 
+// Ping handles the GET /ping route and is used for health checks.
+func (h *Handler) Ping(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"message": "pong",
+	})
+}
+
