@@ -4,8 +4,10 @@ import (
 	"fmt"
 
 	"github.com/bon4to/music-review-app/internal/config"
+	"github.com/bon4to/music-review-app/internal/handlers"
 	"github.com/bon4to/music-review-app/internal/routes"
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
 // Server represents the HTTP server with its routing engine and configuration.
@@ -15,16 +17,19 @@ type Server struct {
 }
 
 // New creates and returns a new Server instance configured with routes and middleware.
-func New(cfg *config.Config) *Server {
-	r := gin.Default()
-
-	// Register application routes.
-	routes.Register(r)
-
-	return &Server{
-		engine: r,
+func New(cfg *config.Config, db *gorm.DB) *Server {
+	s := &Server{
+		engine: gin.Default(),
 		config: cfg,
 	}
+
+	// 1. Create the handler, injecting the database dependency.
+	h := handlers.New(db)
+
+	// 2. Register the routes, passing both the engine and the handler.
+	routes.Register(s.engine, h)
+
+	return s
 }
 
 // Run starts the HTTP server on the configured port.

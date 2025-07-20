@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+	// Initialize dependencies
 	cfg, err := config.LoadConfig()
 	if err != nil {
 		log.Fatalf("failed to load config: %v", err)
@@ -17,22 +18,15 @@ func main() {
 
 	database := db.Connect(cfg)
 
-	var tables []string
-	database.Raw("SELECT tablename FROM pg_tables WHERE schemaname = 'public'").Scan(&tables)
-	log.Println("Tables in DB:", tables)
-
-	// AutoMigrate automatically creates or updates the table based on the provided model definition.
-	// NOTE: In production, consider using versioned migrations instead.
+	// Perform initial setup
 	if err := database.AutoMigrate(&models.User{}, &models.Review{}); err != nil {
 		log.Fatalf("AutoMigrate failed: %v", err)
 	}
 
-	// The database instance is not directly used here,
-	// but initializing it ensures that the connection is successful.
-	_ = database
+	// Create the server, injecting dependencies
+	s := server.New(cfg, database)
 
-	s := server.New(cfg)
-
+	// Run the server
 	if err := s.Run(); err != nil {
 		log.Fatalf("failed to run server: %v", err)
 	}
