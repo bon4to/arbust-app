@@ -1,4 +1,5 @@
 services:
+  # PostgreSQL database container
   db:
     image: postgres:16
     environment:
@@ -6,9 +7,50 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - "5432:5432"
+      - "5432:5432" # ( for local debugging)
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data # Persist database data between container restarts
+
+  # Go backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: go run cmd/server/main.go # Go entrypoint
+    ports:
+      - "8080:8080"
+    volumes:
+      # Mount local backend code into container for live dev
+      - ./backend:/app
+    working_dir: /app
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      # Connect to the db container by service name
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+    # Ensure DB is started before the backend
+    depends_on:
+      - db
+
+  # React frontend (Vite dev server)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173" # Vite dev server
+    volumes:
+      - ./frontend:/app   # Live code sync for frontend
+      - /app/node_modules # Prevent local overwrite of container-installed deps
+    working_dir: /app
+    # WARNING: Use 'npm run build' 
+    # and serve with Nginx in production!
+    command: npm run dev -- --host # Expose Vite on 0.0.0.0 for external access
+    environment:
+      # Required so it doesn't bind only to localhost
+      - HOST=0.0.0.0 
 
 volumes:
   db_data:
