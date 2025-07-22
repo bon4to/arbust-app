@@ -1,0 +1,16 @@
+name: Block direct PRs to main (non-develop source)
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  block-non-develop:
+    runs-on: ubuntu-latest
+    if: github.head_ref != 'develop'
+    steps:
+      - name: Cancel PR from non-develop branch
+        run: |
+          echo "Pull requests to main are only allowed from 'develop'."
+          exit 1
