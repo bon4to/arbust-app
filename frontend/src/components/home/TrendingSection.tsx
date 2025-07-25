@@ -1,13 +1,11 @@
-import { trendingAlbums } from "../../api/mockData";
+import { trendingAlbums } from "../../mock/trendingAlbums";
 import AlbumCard from "./AlbumCards";
+import { SectionTitle } from "../ui/SectionTitle";
 
 const TrendingSection = () => {
   return (
-    <section className="py-16 px-4 md:px-8 bg-neutral-900">
-      <h2 className="text-3xl font-bold text-white mb-8 text-center md:text-left">
-        Trending Now
-      </h2>
-      
+     <section className="bg-neutral-900 px-4 md:px-8 py-14">
+      <SectionTitle title="Trendind Albums" more={true} link="/trending" />
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
         {trendingAlbums.map((album) => (
           <AlbumCard key={album.id} album={album} />
