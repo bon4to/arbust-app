@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LogIn, UserPlus } from 'lucide-react';
 import BaseLayout from '../layouts/BaseLayout';
-import Input from '../components/ui/Input';
+import Input from '../components/common/Input';
 
 const AuthPage: React.FC = () => {
   // State to toggle between Login and Sign Up modes

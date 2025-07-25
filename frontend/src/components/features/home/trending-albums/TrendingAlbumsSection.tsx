@@ -1,6 +1,6 @@
-import { trendingAlbums } from "../../mock/trendingAlbums";
+import { trendingAlbums } from "../../../../mock/trendingAlbums";
 import AlbumCard from "./AlbumCards";
-import { SectionTitle } from "../ui/SectionTitle";
+import { SectionTitle } from "../../../common/SectionTitle";
 
 const TrendingSection = () => {
   return (

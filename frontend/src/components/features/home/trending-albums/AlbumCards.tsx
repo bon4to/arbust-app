@@ -1,4 +1,4 @@
-import type { Album } from '../../mock/trendingAlbums';
+import type { Album } from '../../../../types.ts';
 import React from 'react';
 
 // Defines that this component expects a prop 'album' with the shape of 'Album'

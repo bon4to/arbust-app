@@ -1,5 +1,5 @@
-import { popularReviews } from "../../mock/popularReviews";
-import { SectionTitle } from "../ui/SectionTitle";
+import { popularReviews } from "../../../../mock/popularReviews";
+import { SectionTitle } from "../../../common/SectionTitle";
 import { ReviewCard } from "./ReviewCards";
 
 const PopularReviews = () => (

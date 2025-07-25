@@ -1,12 +1,6 @@
-// Mock data, simulating a future API response for news articles.
-interface News {
-  id: number;
-  title: string;
-  artist: string;
-  cover: string;
-  summary: string;
-}
+import type { News } from "../types.ts";
 
+// Mock data, simulating a future API response for news articles.
 // Applies the News type to the array, ensuring all items match the shape
 export const latestNews: News[] = [
   {

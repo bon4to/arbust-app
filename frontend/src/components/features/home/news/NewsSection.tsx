@@ -1,6 +1,6 @@
 import { NewsCard } from "./NewsCard";
-import { latestNews } from "../../mock/latestNews";
-import { SectionTitle } from "../ui/SectionTitle";
+import { latestNews } from "../../../../mock/latestNews";
+import { SectionTitle } from "../../../common/SectionTitle";
 
 export default function NewsSection() {
   return (

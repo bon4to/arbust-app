@@ -1,11 +1,6 @@
-// Mock data, simulating a future API response.
-export interface Album {
-  id: number;
-  title: string;
-  artist: string;
-  cover: string;
-}
+import type { Album } from "../types.ts";
 
+// Mock data, simulating a future API response.
 // Applies the Album type to the array, ensuring all items match the shape
 export const trendingAlbums: Album[] = [
   { id: 1, title: "The Dark Side of the Moon", artist: "Pink Floyd", cover: "https://placehold.co/300x300/2b2b2b/ffffff?text=Pink+Floyd" },

@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from '../components/ui/Footer';
-import Header from '../components/ui/Header';
+import Footer from '../components/common/Footer';
+import Header from '../components/common/Header';
 
 interface BaseLayoutProps {
   children: React.ReactNode;

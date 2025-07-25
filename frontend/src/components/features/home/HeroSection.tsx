@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus } from "lucide-react";
-import arbustBackground from '../../assets/top-view-green-fresh-leaves.jpg';
+import arbustBackground from '../../../assets/top-view-green-fresh-leaves.jpg';
 
 const HeroSection: React.FC = () => {
   return (

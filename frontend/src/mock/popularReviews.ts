@@ -1,22 +1,6 @@
-// Mock data, simulating a future API response for popular community reviews.
-export interface Review {
-  id: number;
-  user: {
-    name: string;
-    avatar: string;
-  };
-  album: {
-    title: string;
-    year: number;
-    artist: string;
-    cover: string;
-  };
-  rating: number;
-  likes: number;
-  comments: number;
-  content: string;
-}
+import type { Review } from "../types.ts";
 
+// Mock data, simulating a future API response for popular community reviews.
 // Applies the Review type to the array, ensuring all items match the shape
 export const popularReviews: Review[] = [
   {
