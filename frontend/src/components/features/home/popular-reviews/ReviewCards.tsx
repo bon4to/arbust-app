@@ -1,4 +1,4 @@
-import type { Review } from '../../mock/popularReviews';
+import type { Review } from '../../../../mock/popularReviews';
 import { Star, ThumbsUp } from "lucide-react";
 
 
