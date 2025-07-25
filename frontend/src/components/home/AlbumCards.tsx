@@ -1,4 +1,4 @@
-import type { Album } from '../../api/mockData';
+import type { Album } from '../../mock/trendingAlbums';
 import React from 'react';
 
 // Defines that this component expects a prop 'album' with the shape of 'Album'
