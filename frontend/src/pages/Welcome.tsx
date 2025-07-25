@@ -1,11 +1,9 @@
-// src/pages/Home.jsx
-
 import BaseLayout from "../layouts/BaseLayout";
 import ContentLayout from "../layouts/ContentLayout";
-import HeroSection from "../components/home/HeroSection";
-import TrendingSection from "../components/home/TrendingSection";
+import HeroSection from "../components/welcome/HeroSection";
+import TrendingSection from "../components/welcome/TrendingSection";
 
-export default function Home() {
+export default function Welcome() {
   return (
     <BaseLayout>
       <HeroSection />
