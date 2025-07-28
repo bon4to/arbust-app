@@ -33,3 +33,9 @@
 1. Copy `.env.example` to `.env`.
 2. Fill up with desired credentials.
 3. Run `docker compose up -d`.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+> "Arbust" is an unregistered trademark of [@bon4to](https://github.com/bon4to). Use of the name or logo without permission is prohibited.
